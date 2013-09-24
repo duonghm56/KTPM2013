@@ -3,7 +3,7 @@ Created on Sep 17, 2013
 
 @author: acer
 '''
-from test.test_typechecks import Integer
+
 import math
 import exceptions
 
