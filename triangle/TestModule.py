@@ -4,8 +4,8 @@ Created on Sep 17, 2013
 @author: acer
 '''
 import unittest
-import DemoModule
-from DemoModule import checkTriangle
+import Triangle
+from Triangle import checkTriangle
 import math
 
 
@@ -18,13 +18,13 @@ class Test(unittest.TestCase):
 
 
     def test_checkTriangle_wrongInput(self):
-        self.assertEqual("Fail Input", DemoModule.checkTriangle(-4, 5, 6))
+        self.assertEqual("Fail Input", Triangle.checkTriangle(-4, 5, 6))
           
     def test_checkTriangle_wrongInput_1(self):
-        self.assertEqual("Fail Input", DemoModule.checkTriangle(10^40, 5, 6))
+        self.assertEqual("Fail Input", Triangle.checkTriangle(pow(10, 40), 5, 6))
           
     def test_checkTriangle_wrongInput_2(self):
-        self.assertEqual("Fail Input", DemoModule.checkTriangle(-10^40+3, -10^40+4, -10^40+5))  
+        self.assertEqual("Fail Input", Triangle.checkTriangle(-pow(10, 40)+3, -pow(10, 40)+4, -pow(10, 40)+5))  
         
     def test_checkTriangle_wrongInput_3(self):
         self.assertEqual("Fail Input", checkTriangle("hello", 4, 5))

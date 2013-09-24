@@ -5,6 +5,7 @@ Created on Sep 17, 2013
 '''
 from test.test_typechecks import Integer
 import math
+import exceptions
 
 '''
 Ham check tam giac. So int tu 0 -> 2^32-1
@@ -28,8 +29,21 @@ Kiem tra dau vao:
 + Kiem tra so bien dau vao
 + Kiem tra kieu du lieu dau vao
 '''
-def checkInput(a):
-    return a>0 and a<2^32-1 and ((type(a) is int) or (type(a) is float)) 
+
+def num (s):
+    try:
+        if s is True or s is False:
+            raise exceptions.Exception 
+        else:
+            return float(s)
+    except exceptions.Exception:
+        return None
+
+
+def checkInput(a):  
+    a = num(a)      
+    return a>0 and a<=(pow(2,32)-1) and not math.isnan(a)
+        
 
 def checkTamgiacDeu(a,b,c):
     return a==b and b==c and c==a
@@ -43,12 +57,15 @@ def isEqual(a, b):
 def checkTamgiacvuong(a,b,c):        
     return isEqual(a*a + b*b, c*c) or isEqual(b*b + c*c, a*a) or isEqual(a*a + c*c, b*b) 
 
-def checkTamgiac(a,b,c):
+def checkTamgiac(a,b,c):     
     return (a+b>c) and (a+c>b) and (b+c>a)
 
 def checkTriangle(a, b, c):
     'return (a+b>c) and (a+c>b) and (b+c>a) and (a>0) and (b>0) and (c>0)'
-    if checkInput(a) and checkInput(b) and checkInput(c) :        
+    if checkInput(a) and checkInput(b) and checkInput(c) :  
+        a = num(a)
+        b = num(b)
+        c = num(c)      
         if checkTamgiac(a, b, c):
             if checkTamgiacDeu(a, b, c):
                 return "tam giac deu"
@@ -69,3 +86,7 @@ def checkTriangle(a, b, c):
 
 'print (math.pow(math.sqrt(8),2) - (2*2 + 2*2))'
 'print (8 == 8.0)'
+a = num("3")
+b = num("4")
+c = num("5")
+print checkTriangle(a, b, c)
