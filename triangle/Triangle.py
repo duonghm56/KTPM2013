@@ -60,7 +60,7 @@ def checkTamgiacvuong(a,b,c):
 def checkTamgiac(a,b,c):     
     return (a+b>c) and (a+c>b) and (b+c>a)
 
-def checkTriangle(a, b, c):
+def detect_triangle(a, b, c):
     'return (a+b>c) and (a+c>b) and (b+c>a) and (a>0) and (b>0) and (c>0)'
     if checkInput(a) and checkInput(b) and checkInput(c) :  
         a = num(a)
