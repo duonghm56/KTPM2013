@@ -86,7 +86,3 @@ def checkTriangle(a, b, c):
 
 'print (math.pow(math.sqrt(8),2) - (2*2 + 2*2))'
 'print (8 == 8.0)'
-a = num("3")
-b = num("4")
-c = num("5")
-print checkTriangle(a, b, c)

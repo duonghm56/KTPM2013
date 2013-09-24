@@ -93,8 +93,14 @@ class Test(unittest.TestCase):
     def test_checkTriangle_Khongphaitamgiac_midC(self):
         self.assertEqual("khong phai tam giac", Triangle.checkTriangle(3, 5, (0+pow(2,32)-1)/2))
         
-    def test_checkTriangle_Tamgiacdeu(self):
+    def test_checkTriangle_Tamgiacdeu_maxA_maxB_maxC(self):
         self.assertEqual("tam giac deu", Triangle.checkTriangle(pow(2,32)-1,pow(2,32)-1,pow(2,32)-1))
+        
+    def test_checkTriangle_Tamgiaccan_maxA_maxB_midC(self):
+        self.assertEqual("tam giac can", Triangle.checkTriangle( pow(2,32)-1 , pow(2,32)-1 , (pow(2,32)-1)/2) )
+        
+    def test_checkTriangle_Tamgiacvuongcan_midA_midB_maxC(self):
+        self.assertEqual("tam giac vuong can", Triangle.checkTriangle( (pow(2,32)-1)/math.sqrt(2) , (pow(2,32)-1)/math.sqrt(2) , pow(2,32)-1) )
             
     def test_checkTriangle_Tamgiacdeu_2(self):
         self.assertEqual("tam giac deu", Triangle.checkTriangle("1.1","1.1","1.1"))
