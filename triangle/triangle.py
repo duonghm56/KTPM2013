@@ -42,7 +42,7 @@ def num (s):
 
 def checkInput(a):  
     a = num(a)      
-    return a>0 and a<=(pow(2,32)-1) and not math.isnan(a)
+    return a>0 and a <= (pow(2,32)-1) and not math.isnan(a)
         
 
 def checkTamgiacDeu(a,b,c):
@@ -52,7 +52,7 @@ def checkTamgiacCan(a,b,c):
     return a==b or b==c or c==a
 
 def isEqual(a, b):
-    return math.fabs(a-b) < pow(10, -9)
+    return math.fabs(a-b) < 10**-9
 
 def checkTamgiacvuong(a,b,c):        
     return isEqual(a*a + b*b, c*c) or isEqual(b*b + c*c, a*a) or isEqual(a*a + c*c, b*b) 
@@ -82,7 +82,6 @@ def detect_triangle(a, b, c):
             return "khong phai tam giac"
     else:
         return "Fail Input"
-
 
 'print (math.pow(math.sqrt(8),2) - (2*2 + 2*2))'
 'print (8 == 8.0)'
