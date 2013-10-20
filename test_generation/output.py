@@ -79,11 +79,11 @@ def parseString(line):
             value2 = int(r[1])
             listRange.append(MyRange(min(value1,value2), max(value1, value2)))
         if not isValidListRange(listRange):
-            raise 'wrong input'
+            raise Exception('wrong input')
         else:
             return VariableInformation(varName, listRange)
     else:
-        raise 'invalid format'
+        raise Exception('invalid format')
 
 def compose2List(lst1, lst2):
     lst = []        
